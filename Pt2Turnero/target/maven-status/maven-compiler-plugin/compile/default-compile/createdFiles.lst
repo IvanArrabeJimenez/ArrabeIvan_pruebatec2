@@ -1,0 +1,16 @@
+com\ivanarrabe\pt2turnero\persistencia\exceptions\NonexistentEntityException.class
+com\ivanarrabe\pt2turnero\servlets\TurnoSv.class
+com\ivanarrabe\pt2turnero\persistencia\ControladoraPersistencia.class
+com\ivanarrabe\pt2turnero\servlets\ListaSv.class
+com\ivanarrabe\pt2turnero\persistencia\CiudadanoJpaController.class
+com\ivanarrabe\pt2turnero\servlets\CiudadanoSv.class
+com\ivanarrabe\pt2turnero\logica\Ciudadano.class
+com\ivanarrabe\pt2turnero\logica\Controladora.class
+com\ivanarrabe\pt2turnero\persistencia\exceptions\IllegalOrphanException.class
+com\ivanarrabe\pt2turnero\servlets\MenuSv.class
+com\ivanarrabe\pt2turnero\JakartaRestConfiguration.class
+com\ivanarrabe\pt2turnero\persistencia\exceptions\PreexistingEntityException.class
+com\ivanarrabe\pt2turnero\servlets\FiltroSv.class
+com\ivanarrabe\pt2turnero\logica\Turno.class
+com\ivanarrabe\pt2turnero\persistencia\TurnoJpaController.class
+com\ivanarrabe\pt2turnero\resources\JakartaEE8Resource.class
