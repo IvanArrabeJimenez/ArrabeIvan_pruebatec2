@@ -26,22 +26,5 @@ Una vez que inicia la aplicación se abrirá una página web con 4 botones:
 ### 1. Agregar un Ciudadano.
 * Permite al usuario ingresar detalles del ciudadano en un formulario ubicado en una nueva página web.
 * Requiere que todos los campos estén completos, de lo contrario, nos redirige a otra página(error.jsp) en la que se nos muestra un mensaje diciendo que todos los campos son obligatorios.
-* Si todos los detalles son correctos, al pulsar el botón.
-### 2. Listar empleados.
-* Lista todos los empleados activos (los que no han sido eliminados lógicamente) recuperados de la base de datos lanzando una consulta.
-* Implementa la eliminación lógica, marcando a los empleados como eliminados sin quitarlos de la base de datos.
-### 3. Actualizar información de un empleado.
-* Solicita el ID del empleado a modificar, verificando su validez, ya que si no encuentra el ID proporcionado mandará un mensaje de que ese trabajador no existe y lo seguirá pidiendo hasta obtener un ID válido.
-* Muestra los datos del empleado que se va a modificar.
-* Muestra un menú para modificar cada campo de datos del empleado. En función de la opción escogida se procederá a modificar el campo correspondiente.
-* Se pueden modificar desde 1 a todos los campos ya que el menú se repetirá hasta que el usuario decida pulsar la opción de no modificar datos.
-### 4. Eliminar un empleado.
-* Solicita el ID del empleado a modificar, verificando su validez, ya que si no encuentra el ID proporcionado mandará un mensaje de que ese trabajador no existe y lo seguirá pidiendo hasta obtener un ID válido.
-* Muestra los datos del empleado que se ha eliminado. En caso de eliminación por error podemos acceder a la base de datos y cambiarle el estado de "borrado" a false.
-* Para llevar a cabo un borrado lógico y no uno físco realizaremos una edición del empleado en lugar de una eliminación. Utilizaremos un campo booleano que se activará cuando se "elimine" el trabajador, de tal manera que al listarlo no aparecerá pero lo mantendremos en la base de datos.
-### 5. Buscar empleados por cargo.
-* Solicita al usuario ingresar un cargo por teclado.
-* Realiza una consulta a la base de datos para recuperar y mostrar empleados con el cargo especificado.
-* Proporciona comentarios apropiados para roles incorrectos o inexistentes.
-### 0. Salir.
-* Da fin a la ejecución del programa y se despide mediante un mensaje.
+* Si todos los detalles son correctos, al pulsar el botón "Registrar Ciudadano" se insertará el nuevo ciudadano en la Base de Datos.
+
