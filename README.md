@@ -92,6 +92,7 @@ En este proyecto, al no haber método Main y como el lanzamiento de la app lo ha
 public class Ciudadano implements Serializable {
 ```
 Clase que representa la entidad Ciudadano mapeada a la base de datos mediante JPA.
+Tiene una relación de 1 a N con la clase Turno, de tal modo que un Ciudadano puede tener varios turnos.
 
 ### Clase Controladora
 ```java
@@ -104,6 +105,7 @@ Contiene métodos para realizar operaciones CRUD en la base de datos utilizando 
 public class Turno implements Serializable {
 ```
 Clase que representa la entidad Turno mapeada a la base de datos mediante JPA.
+Tiene una relación de 1 a 1 con la clase Ciudadano, de tal moso que un Turno sólo puede ser ocupado por un Ciudadano a la vez.
 
 ### Clase CiudadanoJpaController
 ```java
@@ -179,4 +181,10 @@ Los métodos que se utilizan para las operaciones CRUD son:
 * Se asume que el usuario sabe utilizar el IDE y que sabe como se inicia el programa.
 
 ## Problemas conocidos
-De mo
+De momento los únicos problemas conocidos aparecen cuando no introducimos datos y por eso redirigimos a error.jsp pero se puede solucionar validando los datos y comprobando cuando vayamos a pulsar el botón y enviar que estén todos los campos llenos y que sean válidos.
+
+## Licencia
+Este proyecto pertenece a **Iván Arrabé Jiménez**.
+
+## Contacto
+Para contactar con el equipo del proyecto enviar un email a **[ivanarrabe@gmail.com](mailto:ivanarrabe@gmail.com)**
