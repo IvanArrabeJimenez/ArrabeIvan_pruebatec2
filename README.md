@@ -23,8 +23,54 @@ Una vez que comprobamos que tenemos todo iniciamos XAMP y entramos en phpMyAdmin
 
 ## Uso
 Una vez que inicia la aplicación se abrirá una página web con 4 botones:
-### 1. Agregar un Ciudadano.
-* Permite al usuario ingresar detalles del ciudadano en un formulario ubicado en una nueva página web.
+### 1. Agregar Ciudadano.
+* Permite al usuario ingresar detalles del ciudadano en un formulario ubicado en una nueva página web(agregarCiudadano.jsp).
 * Requiere que todos los campos estén completos, de lo contrario, nos redirige a otra página(error.jsp) en la que se nos muestra un mensaje diciendo que todos los campos son obligatorios.
-* Si todos los detalles son correctos, al pulsar el botón "Registrar Ciudadano" se insertará el nuevo ciudadano en la Base de Datos.
+* Si todos los detalles son correctos, al pulsar el botón "Registrar Ciudadano" se insertará el nuevo ciudadano en la Base de Datos y nos redirigirá a la página principal (index.jsp).
+* Dentro de la misma página (agregarCiudadano.jsp) encontraremos otro botón llamado "Mostrar Ciudadanos", el cual al pulsarlo, nos devolverá en forma de tabla y en la misma página todos los ciudadanos que han sido registrados ya en la base de datos.
+### 2. Agregar Nuevo Turno.
+* Permite al usuario ingresar detalles de un nuevo turno en un formulario ubicado en una nueva página web(agregarTurno.jsp).
+* Requiere que todos los campos estén completos, de lo contrario, nos redirige a otra página(error.jsp) en la que se nos muestra un mensaje diciendo que todos los campos son obligatorios.
+* Si todos los detalles son correctos, al pulsar el botón "Registrar Turno" se insertará el nuevo turno en la Base de Datos y nos redirigirá a la página principal (index.jsp).
+### 3. Atender Turno / Filtro por fecha.
+* Al pulsar este botón se nos redirige a una nueva página (listar.jsp) en la que aparecen dos formularios, uno para cambiar el estado del Turno a "Atendido" y otro para filtrar los turnos por fecha.
+* En el primer formulario debemos introducir el id del turno que queremos cambiar y al pulsar el botón nos redirigirá al index y Cambiará el estado del turno en la base de datos.
+* En el segundo formulario se nos solicita una fecha y cuando la introduzcamos y pulsemos sobre el botón de Listar Turnos nos aparecerán, en una tabla, aquellos turnos que aparezcan en la base de datos con esa fecha específica. En este filtro hemos metido una función lambda que filtra por fecha y luego ordena por id.
+* En ambos casos tiene que haber datos introducidos para que no nos redirija a la página de error.jsp.
+### 4. Filtro Turnos Por Fecha y Estado.
+* Al pulsar este botón se nos redirige a una nueva página (filtrar.jsp) en la que aparece un formulario para filtrar los turnos por fecha y a la vez por el estado, de esta manera se utilizan dos filtros para hacer la búsqueda más exhaustiva.
+* Requiere que todos los campos estén completos, de lo contrario, nos redirige a otra página(error.jsp) en la que se nos muestra un mensaje diciendo que todos los campos son obligatorios.
+* Cuando tengamos elegida una fecha y un estado, por medio de una función lambda que filtra por fecha, luego por el estado y finalmente ordena por id, pulsaremos el botón "Listar turnos" y nos devolverá, por medio de una tabla, de la base de datos todos los turnos que posean esa misma fecha y el estado seleccionado.
+### Volver al inicio.
+Salvo en el index.jsp todas las demás páginas disponen de esta opción que redirige al propio index. Esta función se ha implementado para volver a inicio en caso de que se pulsase una opción por error y se quiera volver atrás sin tener que introducir datos.
 
+## Configuración
+Para la configuración basta con lo solicitado en el apartado de instalación ya que se descargará el proyecto completo y si se tiene todo lo indicado en ese punto el programa funcionará correctamente.
+
+## Estructura de carpetas y Archivos
+La estructura de carpetas y archivos se ha basado en el modelo de JPA:
+* **Igu(Web pages)**
+  - agregarCiudadano.jsp
+  - agregarTurno.jsp
+  - error.jsp
+  - filtrar.jsp
+  - index.jsp
+  - listar.jsp
+* **Lógica**
+  - Ciudadano.java
+  - Controladora.java
+  - Turno.java
+* **Persistencia**
+  * **exceptions**
+    - IllegalOrphanException.java
+    - NonexistentEntityException.java
+    - PreexistingEntityException.java
+  - CiudadanoJpaController.java
+  - ControladoraPersistencia.java
+  - TurnoJpaController.java
+* **Servlets**
+  - CiudadanoSv.java
+  - FiltroSv.java
+  - ListaSv.java
+  - MenuSv.java
+  - TurnoSv.java
